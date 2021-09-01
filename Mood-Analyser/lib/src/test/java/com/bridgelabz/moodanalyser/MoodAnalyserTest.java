@@ -31,5 +31,11 @@ public class MoodAnalyserTest {
 		Assert.assertEquals("Sad", str);
 	}
 	
+	@Test
+	public void testMoodIsHappyUsingConstructor() {
+		MoodAnalyser moodAnalyserUsingConstructor =  new MoodAnalyser("I am Happy");
+		Assert.assertEquals("Happy", moodAnalyserUsingConstructor.analyseMood());
+	}
+	
 
 }
