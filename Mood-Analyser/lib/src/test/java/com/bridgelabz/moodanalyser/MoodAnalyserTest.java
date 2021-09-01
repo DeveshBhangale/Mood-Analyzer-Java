@@ -14,11 +14,22 @@ public class MoodAnalyserTest {
 	}
 	
 	@Test
-	public void testMood() {
+	public void testMoodIsHappy() {
 		String str =  moodAnalyser.analyseMood("I am Happy");
 		Assert.assertEquals("Happy", str);
 	}
-
+	
+	@Test
+	public void testMoodIsSad() {
+		String str =  moodAnalyser.analyseMood("I am not Happy");
+		Assert.assertEquals("Sad", str);
+	}
+	
+	@Test
+	public void testMoodIsSadOrNot() {
+		String str =  moodAnalyser.analyseMood("I am sad");
+		Assert.assertEquals("Sad", str);
+	}
 	
 
 }
