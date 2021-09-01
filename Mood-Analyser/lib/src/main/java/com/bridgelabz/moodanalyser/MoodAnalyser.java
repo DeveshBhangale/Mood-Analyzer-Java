@@ -12,26 +12,31 @@ public class MoodAnalyser {
 	}
 	
 	
-	public String analyseMood(String message) throws Exception {
+	public String analyseMood(String message) throws MoodAnalyserException {
 		try {
-		if(message.toLowerCase().contains("happy") && !message.toLowerCase().contains("not")) {
-			return "Happy";
-		}
-		else {
-			return "Sad";
-		}
+			if(message.toLowerCase().contains("happy") && !message.toLowerCase().contains("not")) {
+				return "Happy";
+			}
+			else {
+				return "Sad";
+			}
 		}
 		catch(NullPointerException e) {
-			return "Happy";
+			throw new MoodAnalyserException("Invalid Input");
 		}
 	}
 	
-	public String analyseMood() {
-		if(message.toLowerCase().contains("happy") && !message.toLowerCase().contains("not")) {
-			return "Happy";
+	public String analyseMood() throws MoodAnalyserException {
+		try {
+			if(message.toLowerCase().contains("happy") && !message.toLowerCase().contains("not")) {
+				return "Happy";
+			}
+			else {
+				return "Sad";
+			}
 		}
-		else {
-			return "Sad";
+		catch(NullPointerException e) {
+			throw new MoodAnalyserException("Invalid Input");
 		}
 	}
 
