@@ -37,10 +37,9 @@ public class MoodAnalyserTest {
 		Assert.assertEquals("Happy", moodAnalyserUsingConstructor.analyseMood());
 	}
 	
-	@Test
+	@Test(expected = MoodAnalyserException.class)
 	public void testMoodIsInValid() throws MoodAnalyserException {
-		System.out.println(moodAnalyser.analyseMood(null));
-//		Assert.assertEquals("Invalid Input", moodAnalyser.analyseMood(null));
+		Assert.assertEquals("Invalid Input", moodAnalyser.analyseMood(null));
 	}
 	
 
