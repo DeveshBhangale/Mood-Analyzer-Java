@@ -12,12 +12,17 @@ public class MoodAnalyser {
 	}
 	
 	
-	public String analyseMood(String message) {
+	public String analyseMood(String message) throws Exception {
+		try {
 		if(message.toLowerCase().contains("happy") && !message.toLowerCase().contains("not")) {
 			return "Happy";
 		}
 		else {
 			return "Sad";
+		}
+		}
+		catch(NullPointerException e) {
+			return "Happy";
 		}
 	}
 	

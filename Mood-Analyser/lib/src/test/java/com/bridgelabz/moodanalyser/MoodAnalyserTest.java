@@ -14,19 +14,19 @@ public class MoodAnalyserTest {
 	}
 	
 	@Test
-	public void testMoodIsHappy() {
+	public void testMoodIsHappy() throws Exception {
 		String str =  moodAnalyser.analyseMood("I am Happy");
 		Assert.assertEquals("Happy", str);
 	}
 	
 	@Test
-	public void testMoodIsSad() {
+	public void testMoodIsSad() throws Exception {
 		String str =  moodAnalyser.analyseMood("I am not Happy");
 		Assert.assertEquals("Sad", str);
 	}
 	
 	@Test
-	public void testMoodIsSadOrNot() {
+	public void testMoodIsSadOrNot() throws Exception {
 		String str =  moodAnalyser.analyseMood("I am sad");
 		Assert.assertEquals("Sad", str);
 	}
@@ -35,6 +35,12 @@ public class MoodAnalyserTest {
 	public void testMoodIsHappyUsingConstructor() {
 		MoodAnalyser moodAnalyserUsingConstructor =  new MoodAnalyser("I am Happy");
 		Assert.assertEquals("Happy", moodAnalyserUsingConstructor.analyseMood());
+	}
+	
+	@Test
+	public void testMoodIsInvalid() throws Exception {
+		String str =  moodAnalyser.analyseMood(null);
+		Assert.assertEquals("Happy", str);
 	}
 	
 
